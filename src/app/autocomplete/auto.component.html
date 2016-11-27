@@ -1,0 +1,25 @@
+<section class="auto-component-header col-lg-12">
+	<section class="col-lg-9"> <span> Element </span></section> 
+	<section class="col-lg-3"><img (click)="clearAll()" class="icon" src="./assets/close.png"/>  <span> Clear </span></section>
+</section>
+
+<section class="auto-component-search col-lg-12">
+	<section class="col-lg-12"><input class="col-lg-12" id="searchbox" placeholder="Search" [(ngModel)]="searchtext" (ngModelChange)="filterList($event)" /></section> 
+</section>
+
+<section class="auto-component-list col-lg-12">
+	<section class="col-lg-12" >
+	<ul class="list-group">
+	  <li class="list-group-item" *ngFor="let item of elementsCollection;let i = index;">
+		<section *ngIf="countsCollection[i] === 0">
+			<input type="checkbox" [id]="item" (change)="$event.target.checked? addElement(true,item,$event) : addElement(false,item,$event)" class="col-lg-2"/>
+			<span class="">{{item}}</span> <span>({{countsCollection[i]}})</span>
+		</section>
+		<section *ngIf="countsCollection[i] > 0">
+			<input type="checkbox" [id]="item" checked="checked" (change)="$event.target.checked? addElement(true,item,$event) : addElement(false,item,$event)" class="col-lg-2"/>
+			<span class="">{{item}}</span> <span>({{countsCollection[i]}})</span>
+		</section>
+	  </li>	
+	</ul>
+	</section> 
+</section>

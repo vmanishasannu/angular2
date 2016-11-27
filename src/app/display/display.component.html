@@ -1,0 +1,81 @@
+<section class="container col-lg-12 col-md-12 filter-header">
+	  <section class="table-header col-lg-12 col-md-12">
+		<span class="table-items col-lg-6 col-md-6"> Item Name </span>
+		<span class="table-items col-lg-6 col-md-6"> HTML Element </span>	
+	  </section>
+	  <section class="display_items">
+		 <span *ngFor="let item of displayCollection;let i = index;">
+			<span class="ui-card" *ngIf="item.name === 'Text Box'">
+				<section class="repeat-box " *ngFor="let itm of getNumber(item.count);let i = index;">
+					<span class="col-lg-6 col-md-6">{{item.name}}</span>
+					<section class="render-item col-lg-6 col-md-6">
+						<input type="textbox" placeholder="TextBox">
+						<img class="icon" src='./assets/add.png' (click)="addMore(item.name)"/>
+						<img class="icon" src='./assets/delete.png' (click)="deleteOne(item.name)"/>
+					</section>
+				</section>
+			</span>
+			<span class="ui-card" *ngIf="item.name === 'Radio Button'">
+				<section class="repeat-box" *ngFor="let itm of getNumber(item.count);let i = index;">
+					<span class="col-lg-6 col-md-6">{{item.name}}</span>
+					<section class="render-item col-lg-6 col-md-6">
+						<label>Yes</label>
+						<input type="radio" name="same">
+						<label>No</label>
+						<input type="radio" name="same"> 
+						<img class="icon" src='./assets/add.png' (click)="addMore(item.name)"/>
+						<img class="icon" src='./assets/delete.png' (click)="deleteOne(item.name)"/>
+					</section>
+				</section>
+			</span>
+			<span class="ui-card" *ngIf="item.name === 'Select Box'">
+				<section class="repeat-box" *ngFor="let itm of getNumber(item.count);let i = index;">
+					<span class="col-lg-6 col-md-6">{{item.name}}</span>
+					<section class="render-item col-lg-6 col-md-6">
+						<select>
+						<option value="volvo">Volvo</option>
+						<option value="saab">Saab</option>
+						<option value="mercedes">Mercedes</option>
+						<option value="audi">Audi</option>
+						</select> 
+						<img class="icon" src='./assets/add.png' (click)="addMore(item.name)"/>
+						<img class="icon" src='./assets/delete.png' (click)="deleteOne(item.name)"/>
+					</section>
+				</section>
+			</span>
+			<span class="ui-card" *ngIf="item.name === 'Check Box'">
+				<section class="repeat-box" *ngFor="let itm of getNumber(item.count);let i = index;">
+					<span class="col-lg-6 col-md-6">{{item.name}}</span>
+					<section class="render-item col-lg-6 col-md-6">
+						<input type="checkbox" name="sample" value="sample">
+						<img class="icon" src='./assets/add.png' (click)="addMore(item.name)"/>
+						<img class="icon" src='./assets/delete.png' (click)="deleteOne(item.name)"/>
+					</section>
+				</section>
+			</span>
+			<span class="ui-card" *ngIf="item.name === 'Text Area'">
+				<section class="repeat-box" *ngFor="let itm of getNumber(item.count);let i = index;">
+					<span class="col-lg-6 col-md-6">{{item.name}}</span>
+					<section class="render-item col-lg-6 col-md-6">
+						<textarea rows="2" cols="30">Sample</textarea>
+						<img class="icon" src='./assets/add.png' (click)="addMore(item.name)"/>
+						<img class="icon" src='./assets/delete.png' (click)="deleteOne(item.name)"/>
+					</section>
+				</section>
+			</span>
+			<span class="ui-card" *ngIf="item.name === 'Auto Complete'">
+				<section class="repeat-box" *ngFor="let itm of getNumber(item.count);let i = index;">
+					<span class="col-lg-6 col-md-6">{{item.name}}</span>
+					<section class="render-item col-lg-6 col-md-6">
+						<input type="textbox" placeholder="AutoComplete">
+						<img class="icon" src='./assets/add.png' (click)="addMore(item.name)"/>
+						<img class="icon" src='./assets/delete.png' (click)="deleteOne(item.name)"/>
+					</section>
+				</section>
+			</span>
+			
+			
+		 </span>	
+	  </section>
+</section>	  
+	  
